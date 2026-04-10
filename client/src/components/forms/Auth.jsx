@@ -110,6 +110,7 @@ const Auth = () => {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder="Official Name"
+                  autoComplete="name"
                   className="w-full bg-white dark:bg-zinc-900/50 border-2 border-zinc-100 dark:border-white/5 py-4 pl-12 pr-4 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-600/10 focus:border-indigo-600 transition-all text-sm font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400"
                 />
               </div>
@@ -119,28 +120,30 @@ const Auth = () => {
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within/input:text-indigo-600 transition-colors duration-300">
                 <HiMail className="text-xl" />
               </div>
-              <input
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                placeholder="Unique Username"
-                className="w-full bg-white dark:bg-zinc-900/50 border-2 border-zinc-100 dark:border-white/5 py-4 pl-12 pr-4 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-600/10 focus:border-indigo-600 transition-all text-sm font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400"
-              />
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  placeholder="Unique Username"
+                  autoComplete="username"
+                  className="w-full bg-white dark:bg-zinc-900/50 border-2 border-zinc-100 dark:border-white/5 py-4 pl-12 pr-4 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-600/10 focus:border-indigo-600 transition-all text-sm font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400"
+                />
             </div>
 
             <div className="relative group/input">
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within/input:text-indigo-600 transition-colors duration-300">
                 <HiLockClosed className="text-xl" />
               </div>
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                placeholder="Secret Password"
-                className="w-full bg-white dark:bg-zinc-900/50 border-2 border-zinc-100 dark:border-white/5 py-4 pl-12 pr-4 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-600/10 focus:border-indigo-600 transition-all text-sm font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400"
-              />
+                <input
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  placeholder="Secret Password"
+                  autoComplete={isLogin ? "current-password" : "new-password"}
+                  className="w-full bg-white dark:bg-zinc-900/50 border-2 border-zinc-100 dark:border-white/5 py-4 pl-12 pr-4 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-600/10 focus:border-indigo-600 transition-all text-sm font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400"
+                />
             </div>
 
             <button
