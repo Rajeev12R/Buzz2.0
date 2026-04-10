@@ -72,6 +72,9 @@ io.on("connection", (socket) => {
 
 
 //routes
+app.get("/get", (req, res) => {
+    return res.json("Server Running.");
+})
 app.use("/auth", authRoutes);
 app.use("/users", getprofileRoute);
 app.use("/posts", postRoute);
