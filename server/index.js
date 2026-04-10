@@ -22,14 +22,14 @@ const server = http.createServer(app);
 
 app.use(express.json());
 app.use(cors({
-    origin: [process.env.CLIENT_URL, "http://localhost:5173", "https://buzz2-0.vercel.app"],
+    origin: [process.env.CLIENT_URL, "http://localhost:5173", "https://buzz2-0.vercel.app", "https://buzz2-0.vercel.app/"],
     credentials: true
 }));
 app.use(cookieParser());
 
 const io = new Server(server, {
     cors: {
-        origin: [process.env.CLIENT_URL, "http://localhost:5173", "https://buzz2-0.vercel.app"],
+        origin: [process.env.CLIENT_URL, "http://localhost:5173", "https://buzz2-0.vercel.app", "https://buzz2-0.vercel.app/"],
         credentials: true,
     }
 })

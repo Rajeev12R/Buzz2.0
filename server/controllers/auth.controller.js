@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken"
 const loginUser = async (req, res) => {
   try {
     const { username, password } = req.body
+    console.log("Login attempt for username:", username);
 
     if (!username || !password) {
       return res.status(400).json({
@@ -40,8 +41,10 @@ const loginUser = async (req, res) => {
       },
     })
   } catch (error) {
+    console.error("Login Error:", error);
     return res.status(500).json({
-      message: "Server error",
+      message: "Server error during login",
+      error: error.message
     })
   }
 }
@@ -49,6 +52,7 @@ const loginUser = async (req, res) => {
 const registerUser = async (req, res) => {
   try {
     const { fullName, username, password } = req.body
+    console.log("Registration attempt for username:", username);
 
     if (!fullName || !username || !password) {
       return res.status(400).json({
@@ -89,8 +93,10 @@ const registerUser = async (req, res) => {
       },
     })
   } catch (error) {
+    console.error("Registration Error:", error);
     return res.status(500).json({
-      message: "Server error",
+      message: "Server error during registration",
+      error: error.message
     })
   }
 }
